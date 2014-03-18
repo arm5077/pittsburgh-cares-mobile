@@ -1,0 +1,72 @@
+
+		
+		
+
+			<form name="form" role="form" novalidate>
+				<div class="row">
+					<div class="col-xs-12">
+						<h2>Sign up <a href="#/login/{{occurrence.id}}"><div class="label label-success" style="font-size:12px; float:right">Have an account? Log in.</div></a>
+						<div class="small smaller">All fields are required. Don't worry, it won't hurt a bit.</div></h2>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<button onclick="facebookLogin()" class="btn btn-primary btn-block"><i class="fa fa-facebook-square"></i> Login with Facebook</button>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label>First name</label>
+							<input type="text" id="first-name" class="form-control" placeholder="" ng-model="account.firstName" required />
+						</div>
+					</div>
+						
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label>Last name</label>
+							<input type="text" id="last-name" class="form-control" ng-model="account.lastName" placeholder="" required />
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label>Email address</label>
+							<input type="email" id="email" class="form-control" ng-model="account.email" placeholder="" required />
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label>Zip</label>
+							<input type="text" class="form-control" ng-model="account.zip" placeholder="" ng-pattern="/\d{5}/" required />
+						</div>
+						
+						<div class="form-group">
+							<label>Birthdate</label>
+							<input type="date" id="birthdate" class="form-control" placeholder="" ng-model="account.birthdate" required />
+						</div>
+						
+						<div class="form-group">
+							<label>Password</label>
+							<input type="password" class="form-control" ng-model="account.password" placeholder=""required />
+						</div>
+						
+						<!--When doing for real, actually need to a post here with the data-->
+						<button type="submit" ng-click="submitAccount()" ng-disabled="form.$invalid || isUnchanged(account)" class="btn btn-primary btn-block btn-lg">Submit</button>
+						
+					</div>
+				</div>
+				
+			</form>
+		
+		

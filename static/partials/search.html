@@ -1,0 +1,98 @@
+			
+			
+			
+			<div class="row">
+				<div class="col-xs-12">
+					<form>
+						<!--I think we should put this as a separate link from the homepage instead of putting here-->
+						<!--<div class="form-group lineAfter">
+							<h4>Have an invitation code?</h4>
+							<!-- If not null, deactivate and gray out the rest of the form 
+							<input type="text" class="form-control" placeholder="">
+						</div>-->
+					
+						<div class="form-group">
+							<h4>I want to help with:</h4>
+							<select class="form-control" ng-model="category" ng-options="category for category in categories" ng-change="updateSearch()" />
+								<option value="">Any category</option>
+							</select>
+						</div>
+						<div class="form-group">
+							
+							<div class="input-group">
+								<span class="input-group-addon">Start</span>
+								<input type="date" class="form-control" ng-model="startDate"  value="{{ date | date: 'yyyy-MM-dd' }}" ng-change="updateSearch()" />
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon">End</span>
+								<input type="date" class="form-control" ng-model="endDate" value="{{ date | date: 'yyyy-MM-dd' }}" ng-change="updateSearch()" />
+							</div>
+						
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Zip code" ng-model="zipCode" ng-pattern="/\d{5}/" ng-blur="updateSearch()" />
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button"><span class = "glyphicon glyphicon-map-marker"></span></button>
+								</span>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<!--<div class="input-group">-->
+							<!--<span class="input-group-addon">Distance</span>-->
+							<select class="form-control" ng-model="distance" ng-options="'Within ' + distance + ' miles' for distance in distances" ng-change="updateSearch()" />
+								<option value="">Any distance</option>
+							</select>
+							<!--</div>-->							
+						</div>			
+						<!--<div class="form-group">
+							<button type="button" class="btn btn-primary btn-lg btn-block">Go</button>
+						</div>	-->					
+					</form>
+				</div>
+			</div>
+			<hr />
+			<div id="results">
+				<!--Day bundle-->
+				<div class="day" ng-repeat="day in days">
+				
+					<!--Day header-->
+					<div class="row">
+						<div class="col-xs-12">
+							<h4 class="lineAfter lineAfter-small">{{day.dayString}}</h4>
+						</div>
+					</div>
+					
+					
+					<!--individual opportunity item-->
+					<div class = "opportunity well well-sm" ng-repeat="occurrence in day.occurrences">
+						<a href="#/opportunity/{{occurrence.opportunityId}}" style="color: black;"><!--TODO: McGill - move this to a css file-->
+							<div class="row">
+								<div class="col-xs-4 time">
+									<h1 style="margin:0 0 10px;">{{occurrence.timeString}}</h1>
+									<h4 class="time">{{occurrence.location}}</h4>
+									
+								</div>
+							
+								<div class="col-xs-8">
+									<div class="row">
+										<div class = "col-xs-12">
+											<h3>{{occurrence.title}}<div class="small">{{occurrence.organizationName}}</div></h3>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<p>{{occurrence.description}}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>			
+		

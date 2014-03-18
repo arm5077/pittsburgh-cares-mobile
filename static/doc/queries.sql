@@ -1,0 +1,3 @@
+SELECT DISTINCT HOC__Primary_Impact_area__c FROM HOC__Occurrence__c INNER JOIN HOC__Volunteer_Opportunity__c ON HOC__Occurrence__c.HOC__Volunteer_Opportunity__c = HOC__Volunteer_Opportunity__c.Id;
+
+SELECT HOC__Volunteer_Opportunity__c.Name, HOC__Volunteer_Opportunity__c.HOC__Description__c, HOC__Occurrence__c.HOC__Start_Date_Time__c FROM HOC__Occurrence__c INNER JOIN HOC__Volunteer_Opportunity__c ON HOC__Occurrence__c.HOC__Volunteer_Opportunity__c = HOC__Volunteer_Opportunity__c.Id WHERE HOC__Primary_Impact_area__c = 'Animals' AND HOC__Occurrence__c.HOC__Start_Date_Time__c >= date('2014-02-21') AND HOC__Occurrence__c.HOC__Start_Date_Time__c < date('2014-04-22');

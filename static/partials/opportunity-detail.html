@@ -1,0 +1,96 @@
+		
+			<div class="row">
+				<div class="col-xs-12">
+					<h2 class="lineAfter lineAfter-small">{{name}}</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<h4 style="font-size:17px;"><span class="small">{{orgName}}</span></h4>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-12">
+					<p>{{description}}</p>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-12">
+					<Div class="well">
+						<ul class="detailsList">
+							<li>
+								<span class = "glyphicon glyphicon-globe"></span>
+									<text><strong>Issue areas:</strong> {{category}}</text>
+									<div style="clear:both"></div> <!--I APOLOGIZE FOR THESE CLEAR BOTHS. FLOATED ELEMENTS, YA KNOW? -->
+								</li>
+							<li>
+								<span class = "glyphicon glyphicon-user"></span>
+								<text><strong>Population served:</strong> {{populationServed}}</text>
+								<div style="clear:both"></div>
+							</li>
+							<!-- TODO: Hiding because can't find this data
+							<li>
+								<span class = "glyphicon glyphicon-question-sign"></span>
+								<text><strong>Activity type:</strong> {{activityType}}</text>
+								<div style="clear:both"></div>
+							</li>-->
+							<li>
+								<span class = "glyphicon glyphicon-wrench"></span>
+								<text><strong>Requirements:</strong> {{requirements}}</text>
+								<div style="clear:both"></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+			
+			
+			<div class="row">
+				<div class="col-xs-12">
+					<h2 class="lineAfter lineAfter-small">Sign up</h2>
+				</div>
+			</div>
+			
+			<div class = "row">
+				<div class="col-xs-12">
+					<div class="opportunityHolder" ng-class="{ 'selected': $index == selectedIndex }" ng-repeat="occurrence in occurrences">
+						<div class="opportunityTile" ng-class="{ 'selected': $index == selectedIndex }" ng-click="itemClicked($index)">
+							<div class="date">{{occurrence.dayString}}</div>
+							<div class="timespan">{{occurrence.timeString}}</div>
+						</div>
+						<div class="opportunityEntry" ng-class="{ 'selected': $index == selectedIndex }">
+							<div class="row" style="margin-bottom:10px;">
+								<div class="col-xs-7">
+									<ul>
+										<li><strong>Location:</strong> {{occurrence.location}}</li>
+										<!--<li><strong>Event:</strong> N/A</li><!-- TODO: where is this? -->
+										<li><strong>Total seats:</strong> {{occurrence.totalSeats}}</li>
+										<li><strong>Leader:</strong> <a href="mailto:{{occurrence.email}}">{{occurrence.leader}}</a></li>
+									</ul>
+									
+								</div>
+								<div class="col-xs-5">
+									<div class="remaining">
+										<div class="text">{{occurrence.remainingSeats}} <div class="small">spots left</div></div>
+									</div>
+									
+								</div>
+								
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<a href="#/signup/{{occurrence.id}}"><button type="button" class="btn btn-primary btn-lg btn-block">Join</button></a>
+								</div>
+							</div>
+							
+							<div style="clear:both"></div>
+						</div>
+					</div>
+				</div>	
+			</div>
+			
+			
+		

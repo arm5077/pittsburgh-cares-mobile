@@ -1,0 +1,51 @@
+
+			<div class="row">
+				<div class="col-xs-12">
+					<h1 class="bigger">OK!</h1>
+					<!--TODO get org url-->
+					<p>You've signed up for <a href="#/opportunity/{{occurrence.opportunityId}}">{{occurrence.name}}</a> on <strong>{{occurrence.dayString}}</strong>.</p>
+					<!--<p>Made a mistake? Cancel your confirmation below.</p>-->
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-12">
+					<h3>Add to your calendar</h3>
+				</div>
+			</div>
+			
+			<div class="row lineAfter">
+				<div class="col-xs-12">
+					<button type="button" class="btn btn-default btn-block" ng-click="generateICal()"><span class = "glyphicon glyphicon-calendar"></span> Add to calendar</button>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-12">
+					<h3>Share on social networks</h3>
+				</div>
+			</div>
+			
+			<div class="row lineAfter">
+				<div class="col-xs-12">
+					
+					<div class="well">
+						{{shareMessage}}
+					</div>
+					
+					<div class="btn-group">						
+						<button type="button" class="btn btn-default" ng-click="shareOnFacebook()"><i class="fa fa-facebook-square"></i> Facebook</button>
+						<button type="button" class="btn btn-default" ng-click="shareOnTwitter()"><i class="fa fa-twitter-square"></i> Twitter</button>
+						<!--<button type="button" class="btn btn-default"><i class="fa fa-linkedin-square"></i> LinkedIn</button>-->
+					</div>
+				</div>
+			</div>
+				
+			
+			<div class="row">
+				<div class="col-xs-12">
+					<!--<button type="button" class="btn btn-danger btn-lg btn-block">Cancel confirmation</button>-->
+					<a href="#/search"><button type="button" class="btn btn-success btn-lg btn-block">Back to search</button></a>
+				</div>
+			</div>
+		
